@@ -1,0 +1,1 @@
+const { NormalizerId } = require('@nlpjs/lang-id');
