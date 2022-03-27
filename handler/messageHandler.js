@@ -104,10 +104,12 @@ module.exports = async (client, message) => {
     const isQuotedGif = quotedMsg && quotedMsg.mimetype === 'image/gif'
     const isQuotedAudio = quotedMsg && quotedMsg.type === 'audio'
     const isQuotedVoice = quotedMsg && quotedMsg.type === 'ptt'
+    const isQuotedDocument = quotedMsg && quotedMsg.type === 'document'
     const isImage = type === 'image'
     const isVideo = type === 'video'
     const isAudio = type === 'audio'
     const isVoice = type === 'ptt'
+    const isDocument = type === 'document'
 
     const isBanned = _ban.includes(sender.id)
     const isGroupAdmins = groupAdmins.includes(sender.id) || false
@@ -747,6 +749,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
       case 'sticker':
       case 'stiker':
         if (!isImage && !isQuotedImage) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gambar yang ingin dijadikan stiker lalu berikan caption ${botPrefix}stiker_`, id);
+        if (!isDocument && !isQuotedDocument) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gambar yang ingin dijadikan stiker lalu berikan caption ${botPrefix}stiker_`, id);
         const encryptMedia = isQuotedImage ? quotedMsg : message
         const _mimetype = isQuotedImage ? quotedMsg.mimetype : mimetype
         const mediaData = await decryptMedia(encryptMedia, uaOverride)
@@ -759,7 +762,8 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
 
       case 'gifsticker':
       case 'gifstiker':
-        if (!isVideo && !isQuotedVideo) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim sebuah video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
+        if (!isVideo && !isQuotedVideo) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gif/video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
+        if (!isDocument && !isQuotedDocument) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gif/video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
         const encryptMedia2 = isQuotedVideo ? quotedMsg : message
         const _mimetype2 = isQuotedVideo ? quotedMsg.mimetype : mimetype
         const vidmediadata = await decryptMedia(encryptMedia2);
