@@ -104,12 +104,10 @@ module.exports = async (client, message) => {
     const isQuotedGif = quotedMsg && quotedMsg.mimetype === 'image/gif'
     const isQuotedAudio = quotedMsg && quotedMsg.type === 'audio'
     const isQuotedVoice = quotedMsg && quotedMsg.type === 'ptt'
-    const isQuotedDocument = quotedMsg && quotedMsg.type === 'document'
     const isImage = type === 'image'
     const isVideo = type === 'video'
     const isAudio = type === 'audio'
     const isVoice = type === 'ptt'
-    const isDocument = type === 'document'
 
     const isBanned = _ban.includes(sender.id)
     const isGroupAdmins = groupAdmins.includes(sender.id) || false
@@ -749,7 +747,6 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
       case 'sticker':
       case 'stiker':
         if (!isImage && !isQuotedImage) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gambar yang ingin dijadikan stiker lalu berikan caption ${botPrefix}stiker_`, id);
-        if (!isDocument && !isQuotedDocument) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gambar yang ingin dijadikan stiker lalu berikan caption ${botPrefix}stiker_`, id);
         const encryptMedia = isQuotedImage ? quotedMsg : message
         const _mimetype = isQuotedImage ? quotedMsg.mimetype : mimetype
         const mediaData = await decryptMedia(encryptMedia, uaOverride)
@@ -762,8 +759,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
 
       case 'gifsticker':
       case 'gifstiker':
-        if (!isVideo && !isQuotedVideo) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gif/video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
-        if (!isDocument && !isQuotedDocument) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gif/video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
+        if (!isVideo && !isQuotedVideo) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim sebuah video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
         const encryptMedia2 = isQuotedVideo ? quotedMsg : message
         const _mimetype2 = isQuotedVideo ? quotedMsg.mimetype : mimetype
         const vidmediadata = await decryptMedia(encryptMedia2);
@@ -786,7 +782,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
         const mediatostr3 = mediaData3.toString('base64')
         const imageBase64_3 = `data:${_mimetype3};base64,${mediatostr3}`
         await client.sendImage(from, imageBase64_3, 'extract.jpg', null, id)
-		break;
+    break;
 
       case 'extract':
         if (!isQuotedImage) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : reply sebuah gambar view once yang ingin diekstrak_`, id);
@@ -795,7 +791,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
           'base64'
         )}`;
         await client.sendImage(from, imageBase64_4, 'extract.jpg', null, id)
-		break;
+    break;
 
       case 'bucin':
         const katabucin = await _function.bucin();
@@ -1128,7 +1124,7 @@ Dito @6285155277438`;
 
       case 'tambahtugas':
       case 'addtugas':
-	if (!q.includes('|')) return await client.reply(from, ind.wrongFormat(), id);
+  if (!q.includes('|')) return await client.reply(from, ind.wrongFormat(), id);
         if (arguments.length < 1) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : ${botPrefix}addtugas | <detail tugas>_`, id);
         const isitugas = arg.split('|')[1];
         const tugasin = tugas.push(isitugas);
@@ -1378,7 +1374,7 @@ Dito @6285155277438`;
       case 'kbbi':
         if (arguments.length === 0) return client.reply(from, `Mengirim detail arti kbbi dari pencarian \n\nContoh : ${botPrefix}kbbi <pencarian>`, id);
         await client.reply(from, ind.wait(), id)
-	try{
+  try{
           _function.misc.kbbi(q)
           .then(async ({ lema, arti })=> {
               let kbbi = '------*KBBI*------'
@@ -1389,7 +1385,7 @@ Dito @6285155277438`;
               }
               await client.reply(from, kbbi, id)
               console.log('Success sending KBBI details!')
-	    })
+      })
             } catch (err){
               await client.reply(from, `Sepertinya kata tersebut tidak ditemukan, mohon coba kata lain`)
               console.log('Failed sending KBBI details!')
@@ -1645,7 +1641,7 @@ Usage: *${botPrefix}reminder* 10s | pesan_pengingat
             await client.reply(from, ind.wait(), id)
             _function.facebook(url).then(async (videoMeta) => {
                 const title = videoMeta.title
-	              const linkhd = videoMeta.download.hd
+                const linkhd = videoMeta.download.hd
                 var statquality = "quality"
                 var linkdown
 
