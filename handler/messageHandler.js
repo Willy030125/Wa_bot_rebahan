@@ -759,7 +759,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
 
       case 'gifsticker':
       case 'gifstiker':
-        if (!isVideo && !isQuotedVideo) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim sebuah video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
+        if (!isVideo && !isQuotedVideo) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : kirim atau reply sebuah gif/video pendek yang ingin dijadikan stiker lalu berikan caption ${botPrefix}gifstiker_`, id);
         const encryptMedia2 = isQuotedVideo ? quotedMsg : message
         const _mimetype2 = isQuotedVideo ? quotedMsg.mimetype : mimetype
         const vidmediadata = await decryptMedia(encryptMedia2);
