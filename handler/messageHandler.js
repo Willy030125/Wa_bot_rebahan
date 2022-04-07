@@ -487,7 +487,7 @@ module.exports = async (client, message) => {
         break;
 
       case 'hear':
-        if (quotedMsg == null) return await client.reply(from, `⚠️ Contoh Penggunaan Perintah:\nreply sebuah Voice Note dengan *${botPrefix}hear*`, id);
+        if (!isQuotedVoice) return await client.reply(from, `Untuk saat ini fitur *${botPrefix}hear* hanya bisa menerima reply Voice Note saja,\nharap maklum masih butuh banyak improvement..`, id);
         const encryptAudioSpeech = quotedMsg
         const SpeechData = await decryptMedia(encryptAudioSpeech)
         const SpeechPath = await saveFile(SpeechData, `voice.${sender.id}`)
