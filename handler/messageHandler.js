@@ -20,8 +20,7 @@ const saus = sagiri(config.nao, { results: 5 });
 const { distance, closestMatch } = require("closest-match");
 const ffmpeg = require('fluent-ffmpeg');
 const MP3Cutter = require('mp3-cutter');
-const {PythonShell} = require('python-shell');
-const pyspeech = new PythonShell('speech.py');
+
 const errorImg = 'https://i.ibb.co/jRCpLfn/user.png'
 
 // Library
@@ -45,13 +44,6 @@ const handler = require ('../handler')
 const isUrl = (url) => {
   return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/gi))
 }
-
-const speech_response = async (input) => new Promise ((resolve, reject) => {
-  pyspeech.send(`${input}`);
-  pyspeech.on('message', function (message) {
-    resolve(message)
-  });
-})
 
 function arrayRemove(arr, value) { 
     
@@ -484,15 +476,6 @@ module.exports = async (client, message) => {
         if (arguments.length < 1) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah: ${botPrefix}voice <kode> <kalimat>_`, id);
         const voiceUrl = _function.voiceUrl(arguments);
         await client.sendPtt(from, voiceUrl, id);
-        break;
-
-      case 'hear':
-        if (quotedMsg == null) return await client.reply(from, `⚠️ Contoh Penggunaan Perintah:\nreply sebuah Voice Note dengan *${botPrefix}hear*`, id);
-        const encryptAudioSpeech = quotedMsg
-        const SpeechData = await decryptMedia(encryptAudioSpeech)
-        const SpeechPath = await saveFile(SpeechData, `voice.${sender.id}`)
-        const speechresp = await speech_response(SpeechPath)
-        await client.reply(from, speechresp, id);
         break;
 
       case 'artdots':
@@ -973,13 +956,13 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
         await client.sendStickerfromUrl(from, teksLink);
         break;
 
-      case 'wikipedia':
+      /*case 'wikipedia':
       case 'wiki':
         if (arguments.length < 1) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : ${botPrefix}wiki <keywords>_`, id);
         const getWiki = await _function.wiki.wiki(arguments.join(' '));
         if (!getWiki) return await client.reply(from, `_⚠️ *${arguments.join(' ')}* pada Wikipedia tidak ditemukan_`, id);
         await client.sendImage(from, getWiki.picUrl, `${t}_${sender.id}.jpg`, getWiki.caption, id);
-        break;
+        break;*/
 
       case 'imagequote':
         const getImagequote = await _function.imgquote();
