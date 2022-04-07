@@ -975,10 +975,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
 
       case 'wikipedia':
       case 'wiki':
-        if (arguments.length < 1) return await client.reply(from, `_⚠️ Contoh Penggunaan Perintah : ${botPrefix}wiki <keywords>_`, id);
-        const getWiki = await _function.wiki.wiki(arguments.join(' '));
-        if (!getWiki) return await client.reply(from, `_⚠️ *${arguments.join(' ')}* pada Wikipedia tidak ditemukan_`, id);
-        await client.sendImage(from, getWiki.picUrl, `${t}_${sender.id}.jpg`, getWiki.caption, id);
+        return await client.reply(from, `Fitur ini sedang tidak bisa digunakan,\nreason: API returns null`, id);
         break;
 
       case 'imagequote':
