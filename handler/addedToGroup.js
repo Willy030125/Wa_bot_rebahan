@@ -12,5 +12,5 @@ module.exports = async (client, event) => {
   }
   */
 
-  return await client.sendText(id, text.menu);
+  return await client.sendText(id, text.higroup);
 };
