@@ -210,7 +210,7 @@ module.exports = async (client, message) => {
       case 'owner':
       case 'contact':
       case 'ownerbot':
-        return await client.reply(from, '_👋 Hai, kalo mau req fitur bisa pc ke *https://wa.me/6288225610884*_', id);
+        return await client.reply(from, '_👋 Hai, kalo mau req fitur bisa pc ke *https://wa.me/6282112378872*_', id);
         break;
 
       case 'clearall':
@@ -307,7 +307,7 @@ module.exports = async (client, message) => {
           await client
             .addParticipant(from, `${arguments[0]}@c.us`)
             .then(async () => await client.reply(from, '_🎉 Berhasil menambahkan Member, Berikan ucapan Selamat datang!_', id))
-            .catch(async (error) => await client.reply(from, '_🥺 Gagal menambahkan member! kemungkinan member sudah diblock oleh Bot! untuk unblockir silahkan DM ke *https://wa.me/6288225610884*_', id));
+            .catch(async (error) => await client.reply(from, '_🥺 Gagal menambahkan member! kemungkinan member sudah diblock oleh Bot! untuk unblockir silahkan DM ke *https://wa.me/6282112378872*_', id));
         break;
 
       case 'kick':
@@ -1053,7 +1053,7 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
         const gta =`Login gta dong
 Aji @628888418207
 Junas @628978113198
-Gisah @6288225610884
+Gisah @6285156132721
 Dito @6285155277438
 Arip @6282299922988
 Hadid @6281329989383
@@ -1068,7 +1068,7 @@ Murise @6281511529199`;
         const genshin =`Login Genshin dong
 Aji @628888418207
 Junas @628978113198
-Gisah @6288225610884
+Gisah @6285156132721
 Dito @6285155277438
 Titan @6287788087760
 Wahuy @6281413543830
@@ -1123,7 +1123,7 @@ Aufa @6285893440925`;
 
       case 'loginmc':
         const mc =`Login minecraft dong
-Gisah @6288225610884
+Gisah @6285156132721
 Willy @6282112378872
 Murise @6281511529199
 Aufa @6285893440925
