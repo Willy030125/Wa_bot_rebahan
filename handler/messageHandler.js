@@ -1045,7 +1045,15 @@ SUSSUS⠀⠀⠀SUS⠀⠀⠀SUS
         break;
 
       case 'loginvr':
-        const vr = "Login vr dong \n yasman @6281285600258 \n hadid @6281329989383 \n junas @628978113198 \n barra @6281388088047 \n sean @6283818448972 \n ari @6281299115053 \n dito @6285155277438 \n murise @6281511529199";
+        const vr = `Login vr dong
+yasman @6281285600258
+hadid @6281329989383
+junas @628978113198
+barra @6281388088047
+sean @6285159026771
+ari @6281299115053
+dito @6285155277438
+murise @6281511529199`;
         await client.sendTextWithMentions(from, vr);
         break;
 
