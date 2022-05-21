@@ -152,7 +152,7 @@ exports.cmdNotFound = () => {
 }
 
 exports.blocked = () => {
-    return `Bot tidak menerima panggilan. Karena kamu telah melanggar rules, maka kamu telah diblok!\n\nHarap hubungi owner: wa.me/6281294958473`
+    return `Bot tidak menerima panggilan. Karena kamu telah melanggar rules, maka kamu telah diblok!\n\nHarap hubungi owner: wa.me/6282112378872`
 }
 
 exports.ownerOnly = () => {
