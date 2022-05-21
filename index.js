@@ -8,7 +8,7 @@ else {linux = {executablePath: "/usr/bin/chromium-browser"}}
 const mac = {executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}
 
 const configObject = {
-  sessionId: "luiibot-clients",
+  sessionId: "rapidbot-clients",
   authTimeout: 0,
   autoRefresh: true,
   cacheEnabled: false,
